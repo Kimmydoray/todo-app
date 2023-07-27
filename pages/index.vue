@@ -10,7 +10,7 @@
               :key="i"
               :task="task" />
           </v-container>
-          <v-form>
+          <v-form @submit.prevent="addTask">
             <v-alert
               :value="alert"
               color="warning"
@@ -24,8 +24,7 @@
                     class="pl-5"
                     type="text" 
                     v-model="newTask" 
-                    placeholder="Add a new task" 
-                    @keypress.enter="addTask" />
+                    placeholder="Add a new task"/>
                 </v-flex>
               </v-col>
               <v-col cols="12" md="6">
